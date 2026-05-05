@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import autoShopImg from "@assets/1140-auto-shop_1776983409603.jpg";
-import logoImg from "@assets/logo_new_clean.png";
+import logoImg from "@assets/logo_img9505_clean.png";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -126,7 +126,7 @@ function Navigation() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-border py-4 shadow-sm shadow-black/20" : "bg-transparent py-6"}`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center cursor-pointer" onClick={() => goTo("/")} data-testid="nav-logo">
-          <img src={logoImg} alt={BUSINESS.name} className="h-28 w-auto object-contain drop-shadow-md -translate-y-1" />
+          <img src={logoImg} alt={BUSINESS.name} className="h-32 w-auto object-contain drop-shadow-md -translate-y-1" />
         </div>
 
         <div className="flex items-center gap-4 md:gap-8">
