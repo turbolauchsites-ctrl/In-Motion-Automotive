@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "40MUNGJ-X6jnqIKj95LCF"
+uri = "file://attached_assets/logo_white_text.png"
+type = "image"
+title = "in-motion-automotive-white-logo"
