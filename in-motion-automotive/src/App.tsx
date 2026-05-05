@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import autoShopImg from "@assets/1140-auto-shop_1776983409603.jpg";
-import logoImg from "@assets/logo_white_final.png";
+import logoImg from "@assets/logo_new_clean.png";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
