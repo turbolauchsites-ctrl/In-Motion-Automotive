@@ -814,6 +814,19 @@ function ServicesPage() {
                 );
               })}
             </div>
+            <div className="mt-6 rounded-2xl overflow-hidden border border-border relative bg-card">
+              <video
+                src="/shop-video.mov"
+                className="w-full h-64 md:h-96 object-cover"
+                controls
+                playsInline
+                preload="metadata"
+              />
+              <div className="px-6 py-4">
+                <span className="text-xs font-bold uppercase tracking-widest text-primary">In The Shop</span>
+                <p className="text-sm text-muted-foreground font-serif mt-1">A look at the quality work we do every day at In Motion Automotive.</p>
+              </div>
+            </div>
           </div>
 
           {/* General Services */}
