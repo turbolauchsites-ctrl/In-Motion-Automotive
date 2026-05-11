@@ -778,6 +778,18 @@ function ServicesPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-6 rounded-2xl overflow-hidden border border-border relative">
+              <img
+                src="/motor-oil.png"
+                alt="Liqui Moly 5W-40 Full Synthetic Motor Oil"
+                className="w-full h-64 md:h-80 object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-6">
+                <span className="text-xs font-bold uppercase tracking-widest text-primary">Premium Oil</span>
+                <p className="text-sm text-foreground/90 font-serif mt-1">We use top-tier fully synthetic oil for maximum engine protection.</p>
+              </div>
+            </div>
           </div>
 
           {/* Priced Services */}
@@ -823,6 +835,25 @@ function ServicesPage() {
                   </div>
                 );
               })}
+            </div>
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 items-center rounded-2xl overflow-hidden border border-border bg-card">
+              <div className="relative h-64 md:h-full min-h-[260px] overflow-hidden">
+                <img
+                  src="/serpentine-belt.png"
+                  alt="Severely worn serpentine belt"
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/60 hidden md:block" />
+              </div>
+              <div className="p-8">
+                <span className="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 mb-3">
+                  <AlertTriangle className="w-4 h-4" /> Real Work. Real Results.
+                </span>
+                <h4 className="text-2xl font-serif uppercase tracking-tight mb-3">Don't Wait Until It Breaks</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  This severely worn serpentine belt came off a customer's vehicle — a few more miles and it would have left them stranded. We catch problems like this every day. Regular maintenance saves you money and keeps you safe.
+                </p>
+              </div>
             </div>
           </div>
 
