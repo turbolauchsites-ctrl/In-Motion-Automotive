@@ -503,7 +503,7 @@ function ContactSection() {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://formsubmit.co/ajax/lucascsmalley@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/inmotionclt@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
