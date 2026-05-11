@@ -782,7 +782,7 @@ function ServicesPage() {
               <img
                 src="/motor-oil.png"
                 alt="Liqui Moly 5W-40 Full Synthetic Motor Oil"
-                className="w-full h-64 md:h-80 object-cover object-center"
+                className="w-full h-64 md:h-80 object-contain bg-card"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-6">
@@ -817,7 +817,7 @@ function ServicesPage() {
             <div className="mt-6 rounded-2xl overflow-hidden border border-border relative bg-card">
               <video
                 src="/shop-video.mov"
-                className="w-full h-64 md:h-96 object-cover"
+                className="w-full h-64 md:h-96 object-contain bg-black"
                 controls
                 playsInline
                 preload="metadata"
