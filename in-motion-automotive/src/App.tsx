@@ -13,7 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Wrench, Settings, Droplet, ThermometerSnowflake, ShieldCheck, Clock, CheckCircle2, ChevronRight, Phone, MapPin, Star, PenTool, Disc, SearchCheck, ThumbsUp, AlertTriangle } from "lucide-react";
+import { Wrench, Settings, Droplet, ThermometerSnowflake, ShieldCheck, Clock, CheckCircle2, ChevronRight, Phone, MapPin, Star, PenTool, Disc, SearchCheck, ThumbsUp, AlertTriangle, Menu, X } from "lucide-react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -109,6 +109,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [, navigate] = useLocation();
 
   useEffect(() => {
@@ -120,10 +121,11 @@ function Navigation() {
   const goTo = (path: string) => {
     navigate(path);
     window.scrollTo({ top: 0 });
+    setMenuOpen(false);
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-border py-4 shadow-sm shadow-black/20" : "bg-transparent py-6"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || menuOpen ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm shadow-black/20" : "bg-transparent"} ${menuOpen ? "py-4" : scrolled ? "py-4" : "py-6"}`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center cursor-pointer" onClick={() => goTo("/")} data-testid="nav-logo">
           <img src={logoImg} alt={BUSINESS.name} className="h-24 w-auto object-contain drop-shadow-md -translate-y-1" />
@@ -133,14 +135,47 @@ function Navigation() {
           <button onClick={() => goTo("/")} className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-wider hidden sm:block" data-testid="nav-home">Home</button>
           <button onClick={() => goTo("/services")} className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-wider hidden sm:block" data-testid="nav-services">Services</button>
           <button onClick={() => goTo("/about")} className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-wider hidden sm:block" data-testid="nav-about">About Us</button>
-          <Button asChild className="font-serif uppercase tracking-widest text-primary-foreground bg-primary hover:bg-primary/90 transition-all hover:scale-105" data-testid="nav-cta">
+          <Button asChild className="font-serif uppercase tracking-widest text-primary-foreground bg-primary hover:bg-primary/90 transition-all hover:scale-105 hidden sm:flex" data-testid="nav-cta">
             <a href={`tel:${BUSINESS.phone.replace(/[^0-9]/g, '')}`}>
               <Phone className="w-4 h-4 mr-2" />
               Call Now
             </a>
           </Button>
+          <button
+            className="sm:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="sm:hidden overflow-hidden border-t border-border"
+          >
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
+              <button onClick={() => goTo("/")} className="text-left w-full px-4 py-3 text-sm font-medium uppercase tracking-wider hover:text-primary hover:bg-white/5 rounded-lg transition-colors">Home</button>
+              <button onClick={() => goTo("/services")} className="text-left w-full px-4 py-3 text-sm font-medium uppercase tracking-wider hover:text-primary hover:bg-white/5 rounded-lg transition-colors">Services</button>
+              <button onClick={() => goTo("/about")} className="text-left w-full px-4 py-3 text-sm font-medium uppercase tracking-wider hover:text-primary hover:bg-white/5 rounded-lg transition-colors">About Us</button>
+              <div className="pt-2 pb-1 px-4">
+                <Button asChild className="w-full font-serif uppercase tracking-widest text-primary-foreground bg-primary hover:bg-primary/90">
+                  <a href={`tel:${BUSINESS.phone.replace(/[^0-9]/g, '')}`}>
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call Now
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
