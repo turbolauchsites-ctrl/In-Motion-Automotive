@@ -884,14 +884,13 @@ function ServicesPage() {
                 );
               })}
             </div>
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 items-center rounded-2xl overflow-hidden border border-border bg-card">
-              <div className="relative h-64 md:h-full min-h-[260px] overflow-hidden">
+            <div className="mt-6 rounded-2xl overflow-hidden border border-border bg-card">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src="/serpentine-belt.png"
                   alt="Severely worn timing belt"
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/60 hidden md:block" />
               </div>
               <div className="p-8">
                 <span className="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 mb-3">
