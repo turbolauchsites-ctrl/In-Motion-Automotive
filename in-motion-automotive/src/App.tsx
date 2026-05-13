@@ -884,12 +884,12 @@ function ServicesPage() {
                 );
               })}
             </div>
-            <div className="mt-6 rounded-2xl overflow-hidden border border-border bg-card">
-              <div className="relative h-56 overflow-hidden">
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden border border-border bg-card">
+              <div className="relative min-h-[260px]">
                 <img
                   src="/serpentine-belt.png"
                   alt="Severely worn timing belt"
-                  className="w-full h-full object-cover object-center"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
                 />
               </div>
               <div className="p-8">
