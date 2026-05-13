@@ -853,7 +853,7 @@ function ServicesPage() {
               <div className="relative h-64 md:h-full min-h-[260px] overflow-hidden">
                 <img
                   src="/serpentine-belt.png"
-                  alt="Severely worn serpentine belt"
+                  alt="Severely worn timing belt"
                   className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/60 hidden md:block" />
@@ -864,7 +864,7 @@ function ServicesPage() {
                 </span>
                 <h4 className="text-2xl font-serif uppercase tracking-tight mb-3">Don't Wait Until It Breaks</h4>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  This severely worn serpentine belt came off a customer's vehicle — a few more miles and it would have left them stranded. We catch problems like this every day. Regular maintenance saves you money and keeps you safe.
+                  This severely worn timing belt broke while driving the vehicle due to lack of maintenance. Don't let this be you! Your timing belt needs to be replaced every 100k miles or every 6 years.
                 </p>
               </div>
             </div>
